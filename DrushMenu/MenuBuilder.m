@@ -50,7 +50,7 @@
     int keyCode = 0;
     NSString *keyCodeString;
     for (id site in sites) {
-        keyCodeString = keyCode <= 9 ? [NSString stringWithFormat:@"%d", keyCode++] : @"";
+        keyCodeString = keyCode <= 9 ? [NSString stringWithFormat:@"%d", keyCode++] : [NSString stringWithFormat:@"%c", (char) (keyCode++ + 87)];
         
         SiteMenuItem *menuItem = [[SiteMenuItem alloc] initWithTitle:[site objectForKey:@"name"]
                                                               action:selector

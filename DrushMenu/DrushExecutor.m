@@ -41,20 +41,15 @@
     return output;
 }
 
-- (void)executeInBackground:(NSString *)onPath withArgs:(NSArray *)arguments {
+- (void)executeInBackground:(NSString *)onPath withArgs:(NSArray *)arguments andCompletion:(void (^)(void))block {
     __block NSString *result;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         result = [self execute:onPath withArgs:arguments];
         dispatch_async(dispatch_get_main_queue(), ^{
             // Main thread.
-            NSUserNotification *notification = [[NSUserNotification alloc] init];
-            notification.title = @"DrushMenu";
-            notification.subtitle = @"Command execution has finished";
-            // Not possible atm due to the way Drush emits its log messages through fwrite. Investigate issue.
-            // notification.informativeText = [NSString stringWithFormat:@"Log: %@", result];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"appBecameIdle" object:nil];
+            if (block != nil) {
+                block();
+            }
         });
     });
 }

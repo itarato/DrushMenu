@@ -13,6 +13,6 @@
 + (DrushExecutor *)mainExecutor;
 
 - (NSString *)execute:(NSString *)onPath withArgs:(NSArray *)arguments;
-- (void)executeInBackground:(NSString *)onPath withArgs:(NSArray *)arguments;
+- (void)executeInBackground:(NSString *)onPath withArgs:(NSArray *)arguments andCompletion:(void(^)(void))block;
 
 @end
