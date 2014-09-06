@@ -14,5 +14,6 @@
 @property (nonatomic, retain) NSArray *arguments;
 
 - (id)initWithName:(NSString *)argName andArguments:(NSString *)firstArg, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)initWithName:(NSString *)argName andArgumentArray:(NSArray *)array;
 
 @end

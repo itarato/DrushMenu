@@ -13,4 +13,8 @@
 @property (nonatomic, retain) id site;
 @property (nonatomic, retain) NSArray *arguments;
 
+- (id)initWithTitle:(NSString *)aString action:(SEL)aSelector keyEquivalent:(NSString *)charCode site:(id)aSite andArguments:(NSArray *)args;
+
+- (NSString *)getPath;
+
 @end

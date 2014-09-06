@@ -29,4 +29,13 @@
     return self;
 }
 
+- (id)initWithName:(NSString *)argName andArgumentArray:(NSArray *)array {
+    if (self = [super init]) {
+        self.name = argName;
+        self.arguments = array;
+    }
+    
+    return self;
+}
+
 @end

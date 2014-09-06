@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		471BAE2C19BAFBF50066005A /* toolbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 471BAE2B19BAFBF50066005A /* toolbar_icon.png */; };
 		471BAE2F19BAFFCE0066005A /* NamedArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE2E19BAFFCE0066005A /* NamedArguments.m */; };
+		471BAE3219BB91A10066005A /* DrushExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE3119BB91A10066005A /* DrushExecutor.m */; };
+		471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE3619BB9A1A0066005A /* MenuBuilder.m */; };
+		476E1BF219BBA40C001CD2A3 /* toolbar_icon_wait.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */; };
+		476E1BF319BBA40C001CD2A3 /* toolbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */; };
 		47D7366119BA43A40061328F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D7366019BA43A40061328F /* Cocoa.framework */; };
 		47D7366B19BA43A40061328F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D7366919BA43A40061328F /* InfoPlist.strings */; };
 		47D7366D19BA43A40061328F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D7366C19BA43A40061328F /* main.m */; };
@@ -34,9 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		471BAE2B19BAFBF50066005A /* toolbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon.png; sourceTree = "<group>"; };
 		471BAE2D19BAFFCE0066005A /* NamedArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NamedArguments.h; sourceTree = "<group>"; };
 		471BAE2E19BAFFCE0066005A /* NamedArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NamedArguments.m; sourceTree = "<group>"; };
+		471BAE3019BB91A10066005A /* DrushExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrushExecutor.h; sourceTree = "<group>"; };
+		471BAE3119BB91A10066005A /* DrushExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrushExecutor.m; sourceTree = "<group>"; };
+		471BAE3519BB9A1A0066005A /* MenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBuilder.h; sourceTree = "<group>"; };
+		471BAE3619BB9A1A0066005A /* MenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBuilder.m; sourceTree = "<group>"; };
+		476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon_wait.png; sourceTree = "<group>"; };
+		476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon.png; sourceTree = "<group>"; };
 		47D7365D19BA43A40061328F /* DrushMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrushMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D7366019BA43A40061328F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		47D7366319BA43A40061328F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -81,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		471BAE3419BB95A10066005A /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */,
+				476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */,
+				47D7367819BA43A40061328F /* Images.xcassets */,
+				47D7367519BA43A40061328F /* MainMenu.xib */,
+			);
+			name = Asset;
+			sourceTree = "<group>";
+		};
 		47D7365419BA43A30061328F = {
 			isa = PBXGroup;
 			children = (
@@ -123,16 +142,18 @@
 		47D7366619BA43A40061328F /* DrushMenu */ = {
 			isa = PBXGroup;
 			children = (
-				471BAE2B19BAFBF50066005A /* toolbar_icon.png */,
+				471BAE3419BB95A10066005A /* Asset */,
 				47D7367219BA43A40061328F /* itaratoAppDelegate.h */,
 				47D7367319BA43A40061328F /* itaratoAppDelegate.m */,
-				47D7367519BA43A40061328F /* MainMenu.xib */,
-				47D7367819BA43A40061328F /* Images.xcassets */,
 				47D7366719BA43A40061328F /* Supporting Files */,
 				47D7369419BA852E0061328F /* SiteMenuItem.h */,
 				47D7369519BA852E0061328F /* SiteMenuItem.m */,
 				471BAE2D19BAFFCE0066005A /* NamedArguments.h */,
 				471BAE2E19BAFFCE0066005A /* NamedArguments.m */,
+				471BAE3019BB91A10066005A /* DrushExecutor.h */,
+				471BAE3119BB91A10066005A /* DrushExecutor.m */,
+				471BAE3519BB9A1A0066005A /* MenuBuilder.h */,
+				471BAE3619BB9A1A0066005A /* MenuBuilder.m */,
 			);
 			path = DrushMenu;
 			sourceTree = "<group>";
@@ -247,8 +268,9 @@
 				47D7366B19BA43A40061328F /* InfoPlist.strings in Resources */,
 				47D7367919BA43A40061328F /* Images.xcassets in Resources */,
 				47D7367119BA43A40061328F /* Credits.rtf in Resources */,
-				471BAE2C19BAFBF50066005A /* toolbar_icon.png in Resources */,
 				47D7367719BA43A40061328F /* MainMenu.xib in Resources */,
+				476E1BF319BBA40C001CD2A3 /* toolbar_icon.png in Resources */,
+				476E1BF219BBA40C001CD2A3 /* toolbar_icon_wait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +290,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47D7366D19BA43A40061328F /* main.m in Sources */,
+				471BAE3219BB91A10066005A /* DrushExecutor.m in Sources */,
 				47D7367419BA43A40061328F /* itaratoAppDelegate.m in Sources */,
 				471BAE2F19BAFFCE0066005A /* NamedArguments.m in Sources */,
+				471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */,
 				47D7369619BA852E0061328F /* SiteMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

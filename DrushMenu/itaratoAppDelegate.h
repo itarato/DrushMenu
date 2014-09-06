@@ -12,8 +12,9 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) NSStatusItem *statusItem;
-@property (nonatomic, retain) NSMutableArray *menuItems;
 @property (nonatomic, retain) NSMenu *menu;
+@property (nonatomic, retain) NSImage *statusIconNormal;
+@property (nonatomic, retain) NSImage *statusIconWait;
 
 - (void)didSelectDrushMenuItem:(NSMenuItem *)sender;
 - (void)selectConfigurationFile:(NSMenuItem *)sender;

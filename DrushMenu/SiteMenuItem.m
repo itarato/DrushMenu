@@ -13,4 +13,20 @@
 @synthesize site;
 @synthesize arguments;
 
+- (id)initWithTitle:(NSString *)aString
+             action:(SEL)aSelector
+      keyEquivalent:(NSString *)charCode
+               site:(id)aSite
+       andArguments:(NSArray *)args {
+    if (self = [super initWithTitle:aString action:aSelector keyEquivalent:charCode]) {
+        self.site = aSite;
+        self.arguments = args;
+    }
+    return self;
+}
+
+- (NSString *)getPath {
+    return [self.site objectForKey:@"folder"];
+}
+
 @end
