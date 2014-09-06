@@ -21,7 +21,8 @@
 }
 
 - (NSString *)execute:(NSString *)onPath withArgs:(NSArray *)arguments {
-    NSLog(@"Args: %@", arguments);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"appBecameBusy" object:nil];
+    
     NSPipe *pipe = [NSPipe pipe];
     NSFileHandle *file = pipe.fileHandleForReading;
     
@@ -52,6 +53,8 @@
             // Not possible atm due to the way Drush emits its log messages through fwrite. Investigate issue.
             // notification.informativeText = [NSString stringWithFormat:@"Log: %@", result];
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"appBecameIdle" object:nil];
         });
     });
 }

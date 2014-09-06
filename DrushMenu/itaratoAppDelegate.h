@@ -22,4 +22,7 @@
 - (void)loadConfigurationFile;
 - (void)approveConfigurationFromURL:(NSURL *)url;
 
+- (void)didAppBecameBusy:(NSNotification *)notification;
+- (void)didAppBecameIdle:(NSNotification *)notification;
+
 @end

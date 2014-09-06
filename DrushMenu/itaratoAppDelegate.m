@@ -48,6 +48,17 @@
     } else {
         [self loadConfigurationFile];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAppBecameBusy:) name:@"appBecameBusy" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAppBecameIdle:) name:@"appBecameIdle" object:nil];
+}
+
+- (void)didAppBecameBusy:(NSNotification *)notification {
+    [self.statusItem setImage:statusIconWait];
+}
+
+- (void)didAppBecameIdle:(NSNotification *)notification {
+    [self.statusItem setImage:statusIconNormal];
 }
 
 - (void)didSelectDrushMenuItem:(SiteMenuItem *)sender {

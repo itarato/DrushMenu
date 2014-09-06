@@ -70,7 +70,6 @@
         id extra_commands;
         if ((extra_commands = [site objectForKey:@"extra_commands"]) != nil) {
             for (id extra_command in extra_commands) {
-                NSLog(@"Commands: %@ %@", [extra_command objectForKey:@"name"], [extra_command objectForKey:@"arguments"]);
                 [arguments addObject:[[NamedArguments alloc]
                                       initWithName:[extra_command objectForKey:@"name"]
                                       andArgumentArray:[extra_command objectForKey:@"arguments"]]];
