@@ -43,6 +43,16 @@ Configuration file
           "arguments": ["mi", "UserMigration", "--force", "--update"]
         }
       ]
+    },
+    {
+      "name": "Foobar Site - Production",
+      "folder": "/var/www/foobar",
+      "extra_commands": [
+        {
+          "name": "Generate emails",
+          "arguments": ["@foobar_prod", "generate-email", "--term=blog"]
+        }
+      ]
     }
   ]
 }
