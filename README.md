@@ -5,6 +5,8 @@ OS-X toolbar menu for Drush operations:
 
 ![Screenshot](https://monosnap.com/image/JGptuKEcudSXqshPZaYLq2bGWkAPQj.png)
 
+*Get the compiled OS-X 10.9 application*: [Download from DropBox](https://dl.dropboxusercontent.com/u/2629592/DrushMenu.app.zip).
+
 
 Requirements
 ------------

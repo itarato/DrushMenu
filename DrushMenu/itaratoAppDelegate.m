@@ -12,7 +12,8 @@
 #import "DrushExecutor.h"
 #import "MenuBuilder.h"
 
-#define IS_DEV YES
+// Enables dev features, such as automatic config load.
+#define IS_DEV NO
 
 @implementation itaratoAppDelegate
 
@@ -21,10 +22,11 @@
 @synthesize statusIconNormal;
 @synthesize statusIconWait;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    // Set user notification delegate.
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     
+    // Set status bar item.
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     statusItem = [statusBar statusItemWithLength:24.0f];
     
@@ -35,6 +37,7 @@
     [statusItem setHighlightMode:YES];
     [statusItem setEnabled:YES];
     
+    // Add main menu.
     menu = [[NSMenu alloc] initWithTitle:@"Drush commands"];
     
     NSMenuItem *configMenuItem = [[NSMenuItem alloc] initWithTitle:@"Configuration" action:@selector(selectConfigurationFile:) keyEquivalent:@"s"];
@@ -43,12 +46,14 @@
  
     [statusItem setMenu:menu];
 
+    // Load configuration.
     if (IS_DEV) {
         [self approveConfigurationFromURL:[NSURL URLWithString:@"/Users/itarato/Documents/drush.json"]];
     } else {
         [self loadConfigurationFile];
     }
     
+    // Setup global event listeners.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAppBecameBusy:) name:@"appBecameBusy" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAppBecameIdle:) name:@"appBecameIdle" object:nil];
 }
@@ -69,7 +74,6 @@
         // Not possible atm due to the way Drush emits its log messages through fwrite. Investigate issue.
         // notification.informativeText = [NSString stringWithFormat:@"Log: %@", result];
         notification.informativeText = [NSString stringWithFormat:@"Site: %@ / Task: %@", sender.site.name, sender.title];
-        [notification setContentImage:[NSImage imageNamed:@"AppIcon-32pt.png"]];
         [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
         
         // Notify others about the finish.

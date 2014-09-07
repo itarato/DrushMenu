@@ -26,6 +26,7 @@
 }
 
 - (void)fromConfigurationFileURL:(NSURL *)url onMenu:(NSMenu *)menu usingAction:(SEL)selector {
+    // Load JSON.
     NSError *error;
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingFromURL:url error:&error];
     
@@ -34,6 +35,7 @@
         return;
     }
     
+    // Parse JSON into config object.
     NSData *configData = [fileHandle readDataToEndOfFile];
     AppConfiguration *appConfig = [[AppConfiguration alloc] initWithData:configData];
     NSArray *sites = appConfig.sites;
