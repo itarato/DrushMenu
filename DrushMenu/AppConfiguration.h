@@ -12,7 +12,13 @@
 
 @property (nonatomic, retain) NSMutableArray *sites;
 @property (nonatomic, retain) NSString *drushPath;
+@property (nonatomic, retain) NSDictionary *data;
 
-- (id)initWithData:(NSData *)data;
++ (AppConfiguration *)mainConfig;
+
+- (BOOL)loadFromData:(NSData *)theData;
+- (void)save;
+- (BOOL)isSavedConfigExist;
+- (BOOL)loadFromSave;
 
 @end

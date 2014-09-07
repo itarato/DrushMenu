@@ -13,9 +13,6 @@
 #import "MenuBuilder.h"
 #import "AppConfiguration.h"
 
-// Enables dev features, such as automatic config load.
-#define IS_DEV NO
-
 @implementation itaratoAppDelegate
 
 @synthesize statusItem;
@@ -48,8 +45,8 @@
     [statusItem setMenu:menu];
 
     // Load configuration.
-    if (IS_DEV) {
-        [self approveConfigurationFromURL:[NSURL URLWithString:@"/Users/itarato/Documents/drush.json"]];
+    if ([[AppConfiguration mainConfig] loadFromSave]) {
+        [self approveConfiguration];
     } else {
         [self loadConfigurationFile];
     }
@@ -96,10 +93,7 @@
     if (url == nil) {
         return;
     }
-    [self approveConfigurationFromURL:url];
-}
-
-- (void)approveConfigurationFromURL:(NSURL *)url {
+    
     // Load JSON.
     NSError *error;
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingFromURL:url error:&error];
@@ -111,7 +105,14 @@
     
     // Parse JSON into config object.
     NSData *configData = [fileHandle readDataToEndOfFile];
-    AppConfiguration *appConfig = [[AppConfiguration alloc] initWithData:configData];
+    [[AppConfiguration mainConfig] loadFromData:configData];
+    [[AppConfiguration mainConfig] save];
+    
+    [self approveConfiguration];
+}
+
+- (void)approveConfiguration {
+    AppConfiguration *appConfig = [AppConfiguration mainConfig];
     
     [[DrushExecutor mainExecutor] setDrushCommandPath:appConfig.drushPath];
     

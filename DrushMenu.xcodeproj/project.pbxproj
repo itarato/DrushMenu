@@ -44,18 +44,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		471BAE2D19BAFFCE0066005A /* NamedArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NamedArguments.h; sourceTree = "<group>"; };
-		471BAE2E19BAFFCE0066005A /* NamedArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NamedArguments.m; sourceTree = "<group>"; };
-		471BAE3019BB91A10066005A /* DrushExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrushExecutor.h; sourceTree = "<group>"; };
-		471BAE3119BB91A10066005A /* DrushExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrushExecutor.m; sourceTree = "<group>"; };
-		471BAE3519BB9A1A0066005A /* MenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBuilder.h; sourceTree = "<group>"; };
-		471BAE3619BB9A1A0066005A /* MenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBuilder.m; sourceTree = "<group>"; };
+		471BAE2D19BAFFCE0066005A /* NamedArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamedArguments.h; path = DrushMenu/NamedArguments.h; sourceTree = "<group>"; };
+		471BAE2E19BAFFCE0066005A /* NamedArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamedArguments.m; path = DrushMenu/NamedArguments.m; sourceTree = "<group>"; };
+		471BAE3019BB91A10066005A /* DrushExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrushExecutor.h; path = DrushMenu/DrushExecutor.h; sourceTree = "<group>"; };
+		471BAE3119BB91A10066005A /* DrushExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrushExecutor.m; path = DrushMenu/DrushExecutor.m; sourceTree = "<group>"; };
+		471BAE3519BB9A1A0066005A /* MenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBuilder.h; path = DrushMenu/MenuBuilder.h; sourceTree = "<group>"; };
+		471BAE3619BB9A1A0066005A /* MenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBuilder.m; path = DrushMenu/MenuBuilder.m; sourceTree = "<group>"; };
 		476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon_wait.png; sourceTree = "<group>"; };
 		476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon.png; sourceTree = "<group>"; };
-		476E1BF519BBD05A001CD2A3 /* AppConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfiguration.h; sourceTree = "<group>"; };
-		476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfiguration.m; sourceTree = "<group>"; };
-		476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteConfiguration.h; sourceTree = "<group>"; };
-		476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteConfiguration.m; sourceTree = "<group>"; };
+		476E1BF519BBD05A001CD2A3 /* AppConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConfiguration.h; path = DrushMenu/AppConfiguration.h; sourceTree = "<group>"; };
+		476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppConfiguration.m; path = DrushMenu/AppConfiguration.m; sourceTree = "<group>"; };
+		476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SiteConfiguration.h; path = DrushMenu/SiteConfiguration.h; sourceTree = "<group>"; };
+		476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SiteConfiguration.m; path = DrushMenu/SiteConfiguration.m; sourceTree = "<group>"; };
 		476E1BFC19BBDDD5001CD2A3 /* AppIcon-16pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-16pt.png"; sourceTree = "<group>"; };
 		476E1BFD19BBDDD5001CD2A3 /* AppIcon-32pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-32pt.png"; sourceTree = "<group>"; };
 		476E1BFE19BBDDD5001CD2A3 /* AppIcon-128pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-128pt.png"; sourceTree = "<group>"; };
@@ -71,8 +71,8 @@
 		47D7366C19BA43A40061328F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47D7366E19BA43A40061328F /* DrushMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrushMenu-Prefix.pch"; sourceTree = "<group>"; };
 		47D7367019BA43A40061328F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		47D7367219BA43A40061328F /* itaratoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = itaratoAppDelegate.h; sourceTree = "<group>"; };
-		47D7367319BA43A40061328F /* itaratoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = itaratoAppDelegate.m; sourceTree = "<group>"; };
+		47D7367219BA43A40061328F /* itaratoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = itaratoAppDelegate.h; path = DrushMenu/itaratoAppDelegate.h; sourceTree = "<group>"; };
+		47D7367319BA43A40061328F /* itaratoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = itaratoAppDelegate.m; path = DrushMenu/itaratoAppDelegate.m; sourceTree = "<group>"; };
 		47D7367619BA43A40061328F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		47D7367819BA43A40061328F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		47D7367E19BA43A40061328F /* DrushMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrushMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,8 +80,8 @@
 		47D7368619BA43A40061328F /* DrushMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrushMenuTests-Info.plist"; sourceTree = "<group>"; };
 		47D7368819BA43A40061328F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		47D7368A19BA43A40061328F /* DrushMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrushMenuTests.m; sourceTree = "<group>"; };
-		47D7369419BA852E0061328F /* SiteMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteMenuItem.h; sourceTree = "<group>"; };
-		47D7369519BA852E0061328F /* SiteMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteMenuItem.m; sourceTree = "<group>"; };
+		47D7369419BA852E0061328F /* SiteMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SiteMenuItem.h; path = DrushMenu/SiteMenuItem.h; sourceTree = "<group>"; };
+		47D7369519BA852E0061328F /* SiteMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SiteMenuItem.m; path = DrushMenu/SiteMenuItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +121,31 @@
 			name = Asset;
 			sourceTree = "<group>";
 		};
+		47A975C119BC5FE100B6D2CB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				47D7367219BA43A40061328F /* itaratoAppDelegate.h */,
+				47D7367319BA43A40061328F /* itaratoAppDelegate.m */,
+				47D7369419BA852E0061328F /* SiteMenuItem.h */,
+				47D7369519BA852E0061328F /* SiteMenuItem.m */,
+				471BAE2D19BAFFCE0066005A /* NamedArguments.h */,
+				471BAE2E19BAFFCE0066005A /* NamedArguments.m */,
+				471BAE3019BB91A10066005A /* DrushExecutor.h */,
+				471BAE3119BB91A10066005A /* DrushExecutor.m */,
+				471BAE3519BB9A1A0066005A /* MenuBuilder.h */,
+				471BAE3619BB9A1A0066005A /* MenuBuilder.m */,
+				476E1BF519BBD05A001CD2A3 /* AppConfiguration.h */,
+				476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */,
+				476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */,
+				476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		47D7365419BA43A30061328F = {
 			isa = PBXGroup;
 			children = (
+				47A975C119BC5FE100B6D2CB /* Classes */,
 				47D7366619BA43A40061328F /* DrushMenu */,
 				47D7368419BA43A40061328F /* DrushMenuTests */,
 				47D7365F19BA43A40061328F /* Frameworks */,
@@ -164,21 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				471BAE3419BB95A10066005A /* Asset */,
-				47D7367219BA43A40061328F /* itaratoAppDelegate.h */,
-				47D7367319BA43A40061328F /* itaratoAppDelegate.m */,
 				47D7366719BA43A40061328F /* Supporting Files */,
-				47D7369419BA852E0061328F /* SiteMenuItem.h */,
-				47D7369519BA852E0061328F /* SiteMenuItem.m */,
-				471BAE2D19BAFFCE0066005A /* NamedArguments.h */,
-				471BAE2E19BAFFCE0066005A /* NamedArguments.m */,
-				471BAE3019BB91A10066005A /* DrushExecutor.h */,
-				471BAE3119BB91A10066005A /* DrushExecutor.m */,
-				471BAE3519BB9A1A0066005A /* MenuBuilder.h */,
-				471BAE3619BB9A1A0066005A /* MenuBuilder.m */,
-				476E1BF519BBD05A001CD2A3 /* AppConfiguration.h */,
-				476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */,
-				476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */,
-				476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */,
 			);
 			path = DrushMenu;
 			sourceTree = "<group>";

@@ -11,7 +11,8 @@
 
 @interface AppConfiguration()
 
-- (void)parse:(NSData *)data;
+- (void)parse;
+- (NSString *)getPListPath;
 
 @end
 
@@ -19,31 +20,82 @@
 
 @synthesize sites;
 @synthesize drushPath;
+@synthesize data;
 
-- (id)initWithData:(NSData *)data {
-    if (self = [super init]) {
-        [self parse:data];
++ (AppConfiguration *)mainConfig {
+    static AppConfiguration *instance;
+    if (instance == nil) {
+        instance = [[AppConfiguration alloc] init];
     }
-    return self;
+    return instance;
 }
 
-- (void)parse:(NSData *)data {
+- (BOOL)loadFromData:(NSData *)theData {
     NSError *json_error;
-    id dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&json_error];
+    self.data = [NSJSONSerialization JSONObjectWithData:theData options:0 error:&json_error];
     
-    if (json_error != nil || ![dictionary isKindOfClass:[NSDictionary class]]) {
+    if (json_error != nil || ![self.data isKindOfClass:[NSDictionary class]]) {
         NSLog(@"Error occurred during JSON parsing.");
-        return;
+        return NO;
     }
     
-    NSArray *sites_raw = [dictionary objectForKey:@"sites"];
+    [self parse];
+    return YES;
+}
+
+// @todo might not needed - could be merged to (loadFromData:).
+- (void)parse {
+    NSArray *sites_raw = [self.data objectForKey:@"sites"];
     self.sites = [[NSMutableArray alloc] initWithCapacity:[sites_raw count]];
     
     for (id site in sites_raw) {
         [self.sites addObject:[[SiteConfiguration alloc] initWithDictionary:site]];
     }
     
-    self.drushPath = [dictionary objectForKey:@"drush"];
+    self.drushPath = [self.data objectForKey:@"drush"];
+}
+
+- (void)save {
+    NSString *error;
+    NSString *pListPath = [self getPListPath];
+    NSDictionary *pListDict = self.data;
+    NSData *pListData = [NSPropertyListSerialization dataFromPropertyList:pListDict format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    
+    if (pListData) {
+        [pListData writeToFile:pListPath atomically:YES];
+    } else {
+        NSLog(@"%@", error);
+    }
+}
+
+- (NSString *)getPListPath {
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *pListPath = [rootPath stringByAppendingPathComponent:@"DrushMenuAppPropertyList.plist"];
+    return pListPath;
+}
+
+- (BOOL)loadFromSave {
+    NSString *error = nil;
+    NSPropertyListFormat format;
+    NSString *pListPath = [self getPListPath];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:pListPath]) {
+        return NO;
+    }
+    NSData *pListXML = [[NSFileManager defaultManager] contentsAtPath:pListPath];
+    NSDictionary *dictionary = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:pListXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&error];
+    if (!dictionary) {
+        NSLog(@"%@", error);
+        return NO;
+    }
+    
+    self.data = dictionary;
+    [self parse];
+    
+    return YES;
+}
+
+- (BOOL)isSavedConfigExist {
+    return NO;
 }
 
 @end

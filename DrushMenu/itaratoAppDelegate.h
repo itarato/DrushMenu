@@ -19,7 +19,7 @@
 - (void)selectConfigurationFile:(NSMenuItem *)sender;
 
 - (void)loadConfigurationFile;
-- (void)approveConfigurationFromURL:(NSURL *)url;
+- (void)approveConfiguration;
 
 - (void)didAppBecameBusy:(NSNotification *)notification;
 - (void)didAppBecameIdle:(NSNotification *)notification;
