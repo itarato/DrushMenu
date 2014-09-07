@@ -12,6 +12,8 @@
 		471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE3619BB9A1A0066005A /* MenuBuilder.m */; };
 		476E1BF219BBA40C001CD2A3 /* toolbar_icon_wait.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */; };
 		476E1BF319BBA40C001CD2A3 /* toolbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */; };
+		476E1BF719BBD05A001CD2A3 /* AppConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */; };
+		476E1BFA19BBD105001CD2A3 /* SiteConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */; };
 		47D7366119BA43A40061328F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D7366019BA43A40061328F /* Cocoa.framework */; };
 		47D7366B19BA43A40061328F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D7366919BA43A40061328F /* InfoPlist.strings */; };
 		47D7366D19BA43A40061328F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D7366C19BA43A40061328F /* main.m */; };
@@ -45,6 +47,10 @@
 		471BAE3619BB9A1A0066005A /* MenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBuilder.m; sourceTree = "<group>"; };
 		476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon_wait.png; sourceTree = "<group>"; };
 		476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon.png; sourceTree = "<group>"; };
+		476E1BF519BBD05A001CD2A3 /* AppConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfiguration.h; sourceTree = "<group>"; };
+		476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfiguration.m; sourceTree = "<group>"; };
+		476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteConfiguration.h; sourceTree = "<group>"; };
+		476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteConfiguration.m; sourceTree = "<group>"; };
 		47D7365D19BA43A40061328F /* DrushMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrushMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D7366019BA43A40061328F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		47D7366319BA43A40061328F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -154,6 +160,10 @@
 				471BAE3119BB91A10066005A /* DrushExecutor.m */,
 				471BAE3519BB9A1A0066005A /* MenuBuilder.h */,
 				471BAE3619BB9A1A0066005A /* MenuBuilder.m */,
+				476E1BF519BBD05A001CD2A3 /* AppConfiguration.h */,
+				476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */,
+				476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */,
+				476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */,
 			);
 			path = DrushMenu;
 			sourceTree = "<group>";
@@ -291,6 +301,8 @@
 			files = (
 				47D7366D19BA43A40061328F /* main.m in Sources */,
 				471BAE3219BB91A10066005A /* DrushExecutor.m in Sources */,
+				476E1BF719BBD05A001CD2A3 /* AppConfiguration.m in Sources */,
+				476E1BFA19BBD105001CD2A3 /* SiteConfiguration.m in Sources */,
 				47D7367419BA43A40061328F /* itaratoAppDelegate.m in Sources */,
 				471BAE2F19BAFFCE0066005A /* NamedArguments.m in Sources */,
 				471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */,

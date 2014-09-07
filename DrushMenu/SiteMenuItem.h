@@ -7,14 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SiteConfiguration.h"
 
 @interface SiteMenuItem : NSMenuItem
 
-@property (nonatomic, retain) id site;
+@property (nonatomic, retain) SiteConfiguration *site;
 @property (nonatomic, retain) NSArray *arguments;
 
-- (id)initWithTitle:(NSString *)aString action:(SEL)aSelector keyEquivalent:(NSString *)charCode site:(id)aSite andArguments:(NSArray *)args;
-
-- (NSString *)getPath;
+- (id)initWithTitle:(NSString *)aString action:(SEL)aSelector keyEquivalent:(NSString *)charCode site:(SiteConfiguration *)aSite andArguments:(NSArray *)args;
 
 @end

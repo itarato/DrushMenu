@@ -10,7 +10,6 @@
 
 @interface itaratoAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) NSStatusItem *statusItem;
 @property (nonatomic, retain) NSMenu *menu;
 @property (nonatomic, retain) NSImage *statusIconNormal;
