@@ -18,6 +18,7 @@
 @implementation AppConfiguration
 
 @synthesize sites;
+@synthesize drushPath;
 
 - (id)initWithData:(NSData *)data {
     if (self = [super init]) {
@@ -41,6 +42,8 @@
     for (id site in sites_raw) {
         [self.sites addObject:[[SiteConfiguration alloc] initWithDictionary:site]];
     }
+    
+    self.drushPath = [dictionary objectForKey:@"drush"];
 }
 
 @end

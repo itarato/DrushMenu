@@ -11,6 +11,7 @@
 #import "NamedArguments.h"
 #import "DrushExecutor.h"
 #import "MenuBuilder.h"
+#import "AppConfiguration.h"
 
 // Enables dev features, such as automatic config load.
 #define IS_DEV NO
@@ -99,7 +100,22 @@
 }
 
 - (void)approveConfigurationFromURL:(NSURL *)url {
-    [[MenuBuilder mainBuilder] fromConfigurationFileURL:url onMenu:[self menu] usingAction:@selector(didSelectDrushMenuItem:)];
+    // Load JSON.
+    NSError *error;
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingFromURL:url error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Error when attempted to open file.");
+        return;
+    }
+    
+    // Parse JSON into config object.
+    NSData *configData = [fileHandle readDataToEndOfFile];
+    AppConfiguration *appConfig = [[AppConfiguration alloc] initWithData:configData];
+    
+    [[DrushExecutor mainExecutor] setDrushCommandPath:appConfig.drushPath];
+    
+    [[MenuBuilder mainBuilder] fromAppConfiguration:appConfig onMenu:[self menu] usingAction:@selector(didSelectDrushMenuItem:)];
 }
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification{

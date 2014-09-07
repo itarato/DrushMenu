@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class AppConfiguration;
+
 @interface MenuBuilder : NSObject
 
 @property (nonatomic, retain) NSMutableArray *menuItems;
 
 + (MenuBuilder *)mainBuilder;
 
-- (void)fromConfigurationFileURL:(NSURL *)url onMenu:(NSMenu *)menu usingAction:(SEL)selector;
+- (void)fromAppConfiguration:(AppConfiguration *)appConfig onMenu:(NSMenu *)menu usingAction:(SEL)selector;
 
 @end

@@ -8,9 +8,9 @@
 
 #import "DrushExecutor.h"
 
-#define DRUSH_EXECUTOR_DRUSH_PATH @"/Users/itarato/Web/drush/drush"
-
 @implementation DrushExecutor
+
+@synthesize drushCommandPath;
 
 + (DrushExecutor *)mainExecutor {
     static DrushExecutor *mainExecutor;
@@ -28,7 +28,7 @@
     
     NSTask *task = [[NSTask alloc] init];
     task.currentDirectoryPath = onPath;
-    task.launchPath = DRUSH_EXECUTOR_DRUSH_PATH;
+    task.launchPath = self.drushCommandPath;
     task.arguments = arguments;
     task.standardOutput = pipe;
     

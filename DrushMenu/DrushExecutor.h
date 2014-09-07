@@ -10,6 +10,8 @@
 
 @interface DrushExecutor : NSObject
 
+@property (nonatomic, retain) NSString *drushCommandPath;
+
 + (DrushExecutor *)mainExecutor;
 
 - (NSString *)execute:(NSString *)onPath withArgs:(NSArray *)arguments;

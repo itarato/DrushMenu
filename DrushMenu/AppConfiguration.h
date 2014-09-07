@@ -11,6 +11,7 @@
 @interface AppConfiguration : NSObject
 
 @property (nonatomic, retain) NSMutableArray *sites;
+@property (nonatomic, retain) NSString *drushPath;
 
 - (id)initWithData:(NSData *)data;
 

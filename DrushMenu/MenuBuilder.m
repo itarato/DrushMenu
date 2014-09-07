@@ -25,19 +25,7 @@
     return instance;
 }
 
-- (void)fromConfigurationFileURL:(NSURL *)url onMenu:(NSMenu *)menu usingAction:(SEL)selector {
-    // Load JSON.
-    NSError *error;
-    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingFromURL:url error:&error];
-    
-    if (error != nil) {
-        NSLog(@"Error when attempted to open file.");
-        return;
-    }
-    
-    // Parse JSON into config object.
-    NSData *configData = [fileHandle readDataToEndOfFile];
-    AppConfiguration *appConfig = [[AppConfiguration alloc] initWithData:configData];
+- (void)fromAppConfiguration:(AppConfiguration *)appConfig onMenu:(NSMenu *)menu usingAction:(SEL)selector {
     NSArray *sites = appConfig.sites;
     
     for (id item in menuItems) {

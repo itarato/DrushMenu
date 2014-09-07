@@ -27,6 +27,7 @@ Configuration file
 
 ```JSON
 {
+  "drush": "/PATH/TO/DRUSH/EXECUTABLE",
   "sites": [
     {
       "name": "Project Rabbit",
