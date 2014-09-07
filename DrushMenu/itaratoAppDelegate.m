@@ -69,6 +69,7 @@
         // Not possible atm due to the way Drush emits its log messages through fwrite. Investigate issue.
         // notification.informativeText = [NSString stringWithFormat:@"Log: %@", result];
         notification.informativeText = [NSString stringWithFormat:@"Site: %@ / Task: %@", sender.site.name, sender.title];
+        [notification setContentImage:[NSImage imageNamed:@"AppIcon-32pt.png"]];
         [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
         
         // Notify others about the finish.

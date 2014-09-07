@@ -14,6 +14,11 @@
 		476E1BF319BBA40C001CD2A3 /* toolbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */; };
 		476E1BF719BBD05A001CD2A3 /* AppConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */; };
 		476E1BFA19BBD105001CD2A3 /* SiteConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */; };
+		476E1C0119BBDDD5001CD2A3 /* AppIcon-16pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BFC19BBDDD5001CD2A3 /* AppIcon-16pt.png */; };
+		476E1C0219BBDDD5001CD2A3 /* AppIcon-32pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BFD19BBDDD5001CD2A3 /* AppIcon-32pt.png */; };
+		476E1C0319BBDDD5001CD2A3 /* AppIcon-128pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BFE19BBDDD5001CD2A3 /* AppIcon-128pt.png */; };
+		476E1C0419BBDDD5001CD2A3 /* AppIcon-256pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BFF19BBDDD5001CD2A3 /* AppIcon-256pt.png */; };
+		476E1C0519BBDDD5001CD2A3 /* AppIcon-512pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1C0019BBDDD5001CD2A3 /* AppIcon-512pt.png */; };
 		47D7366119BA43A40061328F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D7366019BA43A40061328F /* Cocoa.framework */; };
 		47D7366B19BA43A40061328F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D7366919BA43A40061328F /* InfoPlist.strings */; };
 		47D7366D19BA43A40061328F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D7366C19BA43A40061328F /* main.m */; };
@@ -51,6 +56,11 @@
 		476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfiguration.m; sourceTree = "<group>"; };
 		476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteConfiguration.h; sourceTree = "<group>"; };
 		476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteConfiguration.m; sourceTree = "<group>"; };
+		476E1BFC19BBDDD5001CD2A3 /* AppIcon-16pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-16pt.png"; sourceTree = "<group>"; };
+		476E1BFD19BBDDD5001CD2A3 /* AppIcon-32pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-32pt.png"; sourceTree = "<group>"; };
+		476E1BFE19BBDDD5001CD2A3 /* AppIcon-128pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-128pt.png"; sourceTree = "<group>"; };
+		476E1BFF19BBDDD5001CD2A3 /* AppIcon-256pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-256pt.png"; sourceTree = "<group>"; };
+		476E1C0019BBDDD5001CD2A3 /* AppIcon-512pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-512pt.png"; sourceTree = "<group>"; };
 		47D7365D19BA43A40061328F /* DrushMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrushMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D7366019BA43A40061328F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		47D7366319BA43A40061328F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -98,6 +108,11 @@
 		471BAE3419BB95A10066005A /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				476E1BFC19BBDDD5001CD2A3 /* AppIcon-16pt.png */,
+				476E1BFD19BBDDD5001CD2A3 /* AppIcon-32pt.png */,
+				476E1BFE19BBDDD5001CD2A3 /* AppIcon-128pt.png */,
+				476E1BFF19BBDDD5001CD2A3 /* AppIcon-256pt.png */,
+				476E1C0019BBDDD5001CD2A3 /* AppIcon-512pt.png */,
 				476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */,
 				476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */,
 				47D7367819BA43A40061328F /* Images.xcassets */,
@@ -275,11 +290,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				476E1C0119BBDDD5001CD2A3 /* AppIcon-16pt.png in Resources */,
 				47D7366B19BA43A40061328F /* InfoPlist.strings in Resources */,
+				476E1C0519BBDDD5001CD2A3 /* AppIcon-512pt.png in Resources */,
 				47D7367919BA43A40061328F /* Images.xcassets in Resources */,
+				476E1C0219BBDDD5001CD2A3 /* AppIcon-32pt.png in Resources */,
+				476E1C0419BBDDD5001CD2A3 /* AppIcon-256pt.png in Resources */,
 				47D7367119BA43A40061328F /* Credits.rtf in Resources */,
 				47D7367719BA43A40061328F /* MainMenu.xib in Resources */,
 				476E1BF319BBA40C001CD2A3 /* toolbar_icon.png in Resources */,
+				476E1C0319BBDDD5001CD2A3 /* AppIcon-128pt.png in Resources */,
 				476E1BF219BBA40C001CD2A3 /* toolbar_icon_wait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
