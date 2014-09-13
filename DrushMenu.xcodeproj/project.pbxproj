@@ -151,13 +151,13 @@
 				472165AC19C45F2400303C7B /* Command.m */,
 			);
 			name = Classes;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		47D7365419BA43A30061328F = {
 			isa = PBXGroup;
 			children = (
 				472165AE19C474E400303C7B /* README.md */,
-				47A975C119BC5FE100B6D2CB /* Classes */,
 				47D7366619BA43A40061328F /* DrushMenu */,
 				47D7368419BA43A40061328F /* DrushMenuTests */,
 				47D7365F19BA43A40061328F /* Frameworks */,
@@ -199,6 +199,7 @@
 		47D7366619BA43A40061328F /* DrushMenu */ = {
 			isa = PBXGroup;
 			children = (
+				47A975C119BC5FE100B6D2CB /* Classes */,
 				471BAE3419BB95A10066005A /* Asset */,
 				47D7366719BA43A40061328F /* Supporting Files */,
 			);
