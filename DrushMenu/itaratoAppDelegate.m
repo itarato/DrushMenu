@@ -20,6 +20,30 @@
 @synthesize statusIconNormal;
 @synthesize statusIconWait;
 
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+    if (AXIsProcessTrustedWithOptions != NULL) {
+        // 10.9 and later
+        const void * keys[] = { kAXTrustedCheckOptionPrompt };
+        const void * values[] = { kCFBooleanTrue };
+        
+        CFDictionaryRef options = CFDictionaryCreate(
+                                                     kCFAllocatorDefault,
+                                                     keys,
+                                                     values,
+                                                     sizeof(keys) / sizeof(*keys),
+                                                     &kCFCopyStringDictionaryKeyCallBacks,
+                                                     &kCFTypeDictionaryValueCallBacks);
+        
+        AXIsProcessTrustedWithOptions(options);
+    }
+    
+    [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask handler:^(NSEvent *event) {
+        NSLog(@"%@ %d",
+              ([event modifierFlags] & (NSCommandKeyMask | NSAlternateKeyMask | NSControlKeyMask)) ? @"YES" : @"NO",
+              event.keyCode);
+    }];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Set user notification delegate.
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
