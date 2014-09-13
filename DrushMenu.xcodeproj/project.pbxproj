@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		471BAE2F19BAFFCE0066005A /* NamedArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE2E19BAFFCE0066005A /* NamedArguments.m */; };
 		471BAE3219BB91A10066005A /* DrushExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE3119BB91A10066005A /* DrushExecutor.m */; };
 		471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE3619BB9A1A0066005A /* MenuBuilder.m */; };
 		472165AD19C45F2400303C7B /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = 472165AC19C45F2400303C7B /* Command.m */; };
@@ -47,8 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		471BAE2D19BAFFCE0066005A /* NamedArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamedArguments.h; path = DrushMenu/NamedArguments.h; sourceTree = "<group>"; };
-		471BAE2E19BAFFCE0066005A /* NamedArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamedArguments.m; path = DrushMenu/NamedArguments.m; sourceTree = "<group>"; };
 		471BAE3019BB91A10066005A /* DrushExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrushExecutor.h; path = DrushMenu/DrushExecutor.h; sourceTree = "<group>"; };
 		471BAE3119BB91A10066005A /* DrushExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrushExecutor.m; path = DrushMenu/DrushExecutor.m; sourceTree = "<group>"; };
 		471BAE3519BB9A1A0066005A /* MenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBuilder.h; path = DrushMenu/MenuBuilder.h; sourceTree = "<group>"; };
@@ -137,8 +134,6 @@
 				47D7367319BA43A40061328F /* itaratoAppDelegate.m */,
 				47D7369419BA852E0061328F /* SiteMenuItem.h */,
 				47D7369519BA852E0061328F /* SiteMenuItem.m */,
-				471BAE2D19BAFFCE0066005A /* NamedArguments.h */,
-				471BAE2E19BAFFCE0066005A /* NamedArguments.m */,
 				471BAE3019BB91A10066005A /* DrushExecutor.h */,
 				471BAE3119BB91A10066005A /* DrushExecutor.m */,
 				471BAE3519BB9A1A0066005A /* MenuBuilder.h */,
@@ -348,7 +343,6 @@
 				476E1BF719BBD05A001CD2A3 /* AppConfiguration.m in Sources */,
 				476E1BFA19BBD105001CD2A3 /* SiteConfiguration.m in Sources */,
 				47D7367419BA43A40061328F /* itaratoAppDelegate.m in Sources */,
-				471BAE2F19BAFFCE0066005A /* NamedArguments.m in Sources */,
 				471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */,
 				472165AD19C45F2400303C7B /* Command.m in Sources */,
 				47D7369619BA852E0061328F /* SiteMenuItem.m in Sources */,

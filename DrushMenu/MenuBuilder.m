@@ -8,7 +8,6 @@
 
 #import "MenuBuilder.h"
 #import "SiteMenuItem.h"
-#import "NamedArguments.h"
 #import "AppConfiguration.h"
 #import "SiteConfiguration.h"
 #import "Command.h"

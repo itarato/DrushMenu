@@ -8,7 +8,6 @@
 
 #import "itaratoAppDelegate.h"
 #import "SiteMenuItem.h"
-#import "NamedArguments.h"
 #import "DrushExecutor.h"
 #import "MenuBuilder.h"
 #import "AppConfiguration.h"
