@@ -8,6 +8,7 @@
 
 #import "SiteConfiguration.h"
 #import "NamedArguments.h"
+#import "Command.h"
 
 @interface SiteConfiguration()
 
@@ -19,7 +20,7 @@
 
 @synthesize name;
 @synthesize folder;
-@synthesize extraCommands;
+@synthesize commands;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     if (self = [super init]) {
@@ -31,11 +32,11 @@
 - (void)parse:(NSDictionary *)dictionary {
     self.name = [dictionary objectForKey:@"name"];
     self.folder = [dictionary objectForKey:@"folder"];
-    NSArray *extra_commands = [dictionary objectForKey:@"extra_commands"];
-    self.extraCommands = [[NSMutableArray alloc] initWithCapacity:[extra_commands count]];
-    if (extra_commands != nil) {
-        for (id extra_command in extra_commands) {
-            [self.extraCommands addObject:[[NamedArguments alloc] initWithName:[extra_command objectForKey:@"name"] andArgumentArray:[extra_command objectForKey:@"arguments"]]];
+    NSArray *commands_raw = [dictionary objectForKey:@"commands"];
+    self.commands = [[NSMutableArray alloc] initWithCapacity:[commands_raw count]];
+    if (commands_raw != nil) {
+        for (id command_raw in commands_raw) {
+            [self.commands addObject:[[Command alloc] initWithTitle:[command_raw objectForKey:@"name"] andArguments:[command_raw objectForKey:@"arguments"] andSiteConfiguration:self andHotkey:[command_raw objectForKey:@"hotkey"]]];
         }
     }
 }

@@ -11,6 +11,7 @@
 #import "NamedArguments.h"
 #import "AppConfiguration.h"
 #import "SiteConfiguration.h"
+#import "Command.h"
 
 @implementation MenuBuilder
 
@@ -33,40 +34,26 @@
     }
     [menuItems removeAllObjects];
     
-    int keyCode = 0;
-    NSString *keyCodeString;
     for (SiteConfiguration *site in sites) {
-        keyCodeString = keyCode <= 9 ? [NSString stringWithFormat:@"%d", keyCode++] : [NSString stringWithFormat:@"%c", (char) (keyCode++ + 87)];
-        
         // Parent menu item.
         SiteMenuItem *menuItem = [[SiteMenuItem alloc] initWithTitle:site.name
-                                                              action:selector
-                                                       keyEquivalent:keyCodeString
+                                                              action:nil
+                                                       keyEquivalent:@""
                                                                 site:site
-                                                        andArguments:[NSArray arrayWithObjects:@"cc", @"all", nil]];
+                                                          andCommand:nil];
         [menu addItem:menuItem];
         [menuItems addObject:menuItem];
         
         // Default commands.
         NSMenu *submenu = [[NSMenu alloc] init];
-        NSMutableArray *arguments = [[NSMutableArray alloc] initWithObjects:
-                              [[NamedArguments alloc] initWithName:@"Cache clear" andArguments:@"cc", @"all", nil],
-                              [[NamedArguments alloc] initWithName:@"Revert all features" andArguments:@"fra", @"-y", nil],
-                              [[NamedArguments alloc] initWithName:@"Update database" andArguments:@"updb", @"-y", nil],
-                              nil];
-        
-        // Add extra commands.
-        for (NamedArguments *extra_command in site.extraCommands) {
-            [arguments addObject:extra_command];
-        }
         
         // Add submenu items.
-        for (NamedArguments* namedArg in arguments) {
-            SiteMenuItem *subMenuItem = [[SiteMenuItem alloc] initWithTitle:namedArg.name
+        for (Command *command in site.commands) {
+            SiteMenuItem *subMenuItem = [[SiteMenuItem alloc] initWithTitle:command.title
                                                                      action:selector
                                                               keyEquivalent:@""
                                                                        site:site
-                                                               andArguments:namedArg.arguments];
+                                                                 andCommand:command];
             [submenu addItem:subMenuItem];
         }
         [menuItem setSubmenu:submenu];

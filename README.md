@@ -25,32 +25,62 @@ Create configuration file and set when the application starts. Use the toolbar m
 Configuration file
 ------------------
 
+Format:
+
 ```JSON
 {
   "drush": "/PATH/TO/DRUSH/EXECUTABLE",
   "sites": [
     {
-      "name": "Project Rabbit",
-      "folder": "/home/sites/web/project_rabbit/root"
-    },
+      "name": "SITE NAME",
+      "folder": "SITE FOLDER",
+      "commands": [
+        {
+          "name": "COMMAND NAME",
+          "arguments": ["COMMAND ARGUMENTS"],
+          "hotkey": "HOTKEY CODE"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Example:
+
+```JSON
+{
+  "drush": "/home/johndoe/apps/drush",
+  "sites": [
     {
-      "name": "Foobar Site",
+      "name": "Rabbit Site",
       "folder": "/var/www/foobar",
-      "extra_commands": [
+      "commands": [
+        {
+          "name": "Clear caches",
+          "arguments": ["cc", "all"],
+          "hotkey": "82"
+        },
         {
           "name": "Sanitize database",
           "arguments": ["sql-sanitize", "-y"]
         },
         {
           "name": "Migrate users",
-          "arguments": ["mi", "UserMigration", "--force", "--update"]
+          "arguments": ["mi", "UserMigration", "--force", "--update"],
+          "hotkey": "87"
         }
       ]
     },
     {
-      "name": "Foobar Site - Production",
+      "name": "Cat Site - Production",
       "folder": "/var/www/foobar",
-      "extra_commands": [
+      "commands": [
+        {
+          "name": "Clear caches",
+          "arguments": ["@foobar_prod", "cc", "all"],
+          "hotkey": "82"
+        },
         {
           "name": "Generate emails",
           "arguments": ["@foobar_prod", "generate-email", "--term=blog"]

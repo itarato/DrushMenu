@@ -43,7 +43,6 @@
     return YES;
 }
 
-// @todo might not needed - could be merged to (loadFromData:).
 - (void)parse {
     NSArray *sites_raw = [self.data objectForKey:@"sites"];
     self.sites = [[NSMutableArray alloc] initWithCapacity:[sites_raw count]];

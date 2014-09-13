@@ -11,16 +11,16 @@
 @implementation SiteMenuItem
 
 @synthesize site;
-@synthesize arguments;
+@synthesize command;
 
 - (id)initWithTitle:(NSString *)aString
              action:(SEL)aSelector
       keyEquivalent:(NSString *)charCode
                site:(SiteConfiguration *)aSite
-       andArguments:(NSArray *)args {
+         andCommand:(Command *)aCommand {
     if (self = [super initWithTitle:aString action:aSelector keyEquivalent:charCode]) {
         self.site = aSite;
-        self.arguments = args;
+        self.command = aCommand;
     }
     return self;
 }

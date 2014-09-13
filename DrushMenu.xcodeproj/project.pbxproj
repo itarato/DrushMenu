@@ -10,6 +10,8 @@
 		471BAE2F19BAFFCE0066005A /* NamedArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE2E19BAFFCE0066005A /* NamedArguments.m */; };
 		471BAE3219BB91A10066005A /* DrushExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE3119BB91A10066005A /* DrushExecutor.m */; };
 		471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 471BAE3619BB9A1A0066005A /* MenuBuilder.m */; };
+		472165AD19C45F2400303C7B /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = 472165AC19C45F2400303C7B /* Command.m */; };
+		472165AF19C474E400303C7B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 472165AE19C474E400303C7B /* README.md */; };
 		4761F56E19BEE66900115A0C /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4761F56D19BEE66900115A0C /* ApplicationServices.framework */; };
 		476E1BF219BBA40C001CD2A3 /* toolbar_icon_wait.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */; };
 		476E1BF319BBA40C001CD2A3 /* toolbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 476E1BF119BBA40C001CD2A3 /* toolbar_icon.png */; };
@@ -51,6 +53,9 @@
 		471BAE3119BB91A10066005A /* DrushExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrushExecutor.m; path = DrushMenu/DrushExecutor.m; sourceTree = "<group>"; };
 		471BAE3519BB9A1A0066005A /* MenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBuilder.h; path = DrushMenu/MenuBuilder.h; sourceTree = "<group>"; };
 		471BAE3619BB9A1A0066005A /* MenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBuilder.m; path = DrushMenu/MenuBuilder.m; sourceTree = "<group>"; };
+		472165AB19C45F2400303C7B /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		472165AC19C45F2400303C7B /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
+		472165AE19C474E400303C7B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4761F56B19BEE64200115A0C /* libUniversalAccess.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libUniversalAccess.dylib; path = usr/lib/libUniversalAccess.dylib; sourceTree = SDKROOT; };
 		4761F56D19BEE66900115A0C /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		476E1BF019BBA40C001CD2A3 /* toolbar_icon_wait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon_wait.png; sourceTree = "<group>"; };
@@ -142,6 +147,8 @@
 				476E1BF619BBD05A001CD2A3 /* AppConfiguration.m */,
 				476E1BF819BBD105001CD2A3 /* SiteConfiguration.h */,
 				476E1BF919BBD105001CD2A3 /* SiteConfiguration.m */,
+				472165AB19C45F2400303C7B /* Command.h */,
+				472165AC19C45F2400303C7B /* Command.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 		47D7365419BA43A30061328F = {
 			isa = PBXGroup;
 			children = (
+				472165AE19C474E400303C7B /* README.md */,
 				47A975C119BC5FE100B6D2CB /* Classes */,
 				47D7366619BA43A40061328F /* DrushMenu */,
 				47D7368419BA43A40061328F /* DrushMenuTests */,
@@ -310,6 +318,7 @@
 				47D7367919BA43A40061328F /* Images.xcassets in Resources */,
 				476E1C0219BBDDD5001CD2A3 /* AppIcon-32pt.png in Resources */,
 				476E1C0419BBDDD5001CD2A3 /* AppIcon-256pt.png in Resources */,
+				472165AF19C474E400303C7B /* README.md in Resources */,
 				47D7367119BA43A40061328F /* Credits.rtf in Resources */,
 				47D7367719BA43A40061328F /* MainMenu.xib in Resources */,
 				476E1BF319BBA40C001CD2A3 /* toolbar_icon.png in Resources */,
@@ -340,6 +349,7 @@
 				47D7367419BA43A40061328F /* itaratoAppDelegate.m in Sources */,
 				471BAE2F19BAFFCE0066005A /* NamedArguments.m in Sources */,
 				471BAE3719BB9A1A0066005A /* MenuBuilder.m in Sources */,
+				472165AD19C45F2400303C7B /* Command.m in Sources */,
 				47D7369619BA852E0061328F /* SiteMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@
 #import "DrushExecutor.h"
 #import "MenuBuilder.h"
 #import "AppConfiguration.h"
+#import "Command.h"
 
 @implementation itaratoAppDelegate
 
@@ -41,6 +42,7 @@
         NSLog(@"%@ %d",
               ([event modifierFlags] & (NSCommandKeyMask | NSAlternateKeyMask | NSControlKeyMask)) ? @"YES" : @"NO",
               event.keyCode);
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDMNotificationExecutionShortcut object:event];
     }];
 }
 
@@ -89,18 +91,7 @@
 }
 
 - (void)didSelectDrushMenuItem:(SiteMenuItem *)sender {
-    [[DrushExecutor mainExecutor] executeInBackground:sender.site.folder withArgs:[sender arguments] andCompletion:^{
-        NSUserNotification *notification = [[NSUserNotification alloc] init];
-        notification.title = @"DrushMenu";
-        notification.subtitle = @"Command execution has finished";
-        // Not possible atm due to the way Drush emits its log messages through fwrite. Investigate issue.
-        // notification.informativeText = [NSString stringWithFormat:@"Log: %@", result];
-        notification.informativeText = [NSString stringWithFormat:@"Site: %@ / Task: %@", sender.site.name, sender.title];
-        [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-        
-        // Notify others about the finish.
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"appBecameIdle" object:nil];
-    }];
+    [sender.command execute];
 }
 
 - (void)selectConfigurationFile:(NSMenuItem *)sender {

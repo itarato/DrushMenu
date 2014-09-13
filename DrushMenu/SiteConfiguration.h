@@ -12,7 +12,7 @@
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *folder;
-@property (nonatomic, retain) NSMutableArray *extraCommands;
+@property (nonatomic, retain) NSMutableArray *commands;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
