@@ -7,8 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AppConfiguration.h"
+#import "Command.h"
+#import "SiteConfiguration.h"
 
 @interface DrushMenuTests : XCTestCase
+
+@property (nonatomic, retain) NSString *configuration;
 
 @end
 
@@ -17,18 +22,46 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.configuration = @"\
+{\
+    \"drush\": \"/foo/bar\",\
+    \"sites\": [\
+        {\
+            \"name\": \"foobar\",\
+            \"folder\": \"/web/foo\",\
+            \"commands\": [\
+                {\
+                    \"name\": \"Foo command\",\
+                    \"arguments\": [\"arg1\", \"arg2\"],\
+                    \"hotkey\": \"85\"\
+                }\
+            ]\
+        }\
+    ]\
+}";
 }
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testConfiguration
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSData *jsonData = [self.configuration dataUsingEncoding:NSUTF8StringEncoding];
+    [[AppConfiguration mainConfig] loadFromData:jsonData];
+    XCTAssertTrue([[[AppConfiguration mainConfig] drushPath] isEqualToString:@"/foo/bar"], @"Drush path is correct");
+    XCTAssertTrue([[[AppConfiguration mainConfig] sites] count] == 1, @"There is one site.");
+    
+    SiteConfiguration *siteConfig = [[[AppConfiguration mainConfig] sites] objectAtIndex:0];
+    XCTAssertTrue([[siteConfig commands] count] == 1, @"There is one command");
+    XCTAssertTrue([[siteConfig name] isEqualToString:@"foobar"], @"Site name is correct");
+    XCTAssertTrue([[siteConfig folder] isEqualToString:@"/web/foo"], @"Folder is correct");
+    
+    Command *command = [[siteConfig commands] objectAtIndex:0];
+    XCTAssertTrue([[command title] isEqualToString:@"Foo command"], @"Command name is correct");
+    XCTAssertTrue([[command arguments] count] == 2, @"There are 2 arguments");
+    XCTAssertTrue([[command hotkey] isEqualToString:@"85"], @"Hotkey is set");
 }
 
 @end
