@@ -38,10 +38,12 @@
     }
     
     [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask handler:^(NSEvent *event) {
-        NSLog(@"%@ %d",
-              ([event modifierFlags] & (NSCommandKeyMask | NSAlternateKeyMask | NSControlKeyMask)) ? @"YES" : @"NO",
-              event.keyCode);
-        [[NSNotificationCenter defaultCenter] postNotificationName:kDMNotificationExecutionShortcut object:event];
+        unsigned long combinedModifierKeyMask = (NSCommandKeyMask | NSAlternateKeyMask | NSControlKeyMask);
+        BOOL isAllModifiers = ([event modifierFlags] & combinedModifierKeyMask) == combinedModifierKeyMask;
+        NSLog(@"%@ %d", (isAllModifiers ? @"YES" : @"NO"), event.keyCode);
+        if (isAllModifiers) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kDMNotificationExecutionShortcut object:event];
+        }
     }];
 }
 

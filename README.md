@@ -19,7 +19,9 @@ Requirements
 Usage
 -----
 
-Create configuration file and set when the application starts. Use the toolbar menu items or the shortcuts. Selecting the main site menu items will execute cache clear, all other submenu items will execute the named command. Execution termination will present a system notification.
+Create configuration file and set when the application starts. Use the toolbar menu items or the shortcuts. Selecting the main site menu items will execute cache clear, all other submenu items will execute the named command. Execution termination will present a system notification. 
+
+For global hotkeys you have to use CMD+ALT+CTRL. Hotkeys are set by their keycode. At the moment you can check the keycode by running the source from XCode and check the log when hitting a key.
 
 
 Configuration file
